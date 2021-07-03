@@ -4,7 +4,7 @@ function optionChanged(selectedID){
     // Check if value is selected
     console.log(selectedID);
     // Read json file
-    d3.json("samples.json").then(data)
+    d3.json("data/samples.json").then(data)
     d3.select(#selDataset).html("");
 
     // Select value from dropdown menu
