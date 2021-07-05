@@ -1,5 +1,3 @@
-// Function for dropdown menu
-
 function optionChanged(selectedID){
     // Check if value is selected
     console.log(selectedID);
