@@ -50,11 +50,6 @@ function optionChanged(selectedID){
     var otuLabels = idSample[0].otu_labels
     otuLabels = otuLabels.reverse();
 
-    // Check values
-     console.log(sampleValue);
-     console.log(otuID);
-     console.log(otuLabels);
-
       // Check the metadata loaded for the selected ID
     console.log(idMetadata);
     
@@ -65,3 +60,14 @@ function optionChanged(selectedID){
           // console.log(item);
           panelDisplay.append("p").text(`${item[0]}: ${item[1]}`)
        });
+
+// BAR CHART
+ 
+    // Filter sample array data for the selected ID
+    const idSample = data.samples.filter(item => parseInt(item.id) == selectedID);
+    
+    // // Check values
+     console.log(typeof parseInt(item.id));
+     console.log(idSample[0].sample_values);  
+     console.log(idSample[0].otu_ids);  
+     console.log(idSample[0].otu_labels);  
