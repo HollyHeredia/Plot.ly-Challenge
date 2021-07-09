@@ -50,24 +50,29 @@ function optionChanged(selectedID){
     var otuLabels = idSample[0].otu_labels
     otuLabels = otuLabels.reverse();
 
-      // Check the metadata loaded for the selected ID
-    console.log(idMetadata);
-    
-    const panelDisplay = d3.select("#sample-metadata");
-    panelDisplay.html("");
-    Object.entries(idMetadata[0]).forEach(item=> 
-       {
-          // console.log(item);
-          panelDisplay.append("p").text(`${item[0]}: ${item[1]}`)
-       });
+   // Y axis of bar chart
+   const yAxis = otuID.map(item => 'OTU' + " " + item);
+   console.log(yAxis);
 
-// BAR CHART
- 
-    // Filter sample array data for the selected ID
-    const idSample = data.samples.filter(item => parseInt(item.id) == selectedID);
-    
-    // // Check values
-     console.log(typeof parseInt(item.id));
-     console.log(idSample[0].sample_values);  
-     console.log(idSample[0].otu_ids);  
-     console.log(idSample[0].otu_labels);  
+   // Define the layout and trace object, edit color and orientation
+   const trace = {
+   y: yAxis,
+   x: sampleValue,
+   type: 'bar',
+   orientation: "h",
+   text:  otuLabels,
+   marker: {
+      color: 'rgb(154, 140, 152)',
+      line: {
+         width: 3
+   }
+   }
+   },
+   layout = {
+   title: 'Top 10 Operational Taxonomic Units (OTU)/Individual',
+   xaxis: {title: 'Number of Samples Collected'},
+   yaxis: {title: 'OTU ID'}
+   };
+
+   // Plot using Plotly
+   Plotly.newPlot('bar', [trace], layout,  {responsive: true});
