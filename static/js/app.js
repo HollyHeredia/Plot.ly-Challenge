@@ -106,3 +106,113 @@ function optionChanged(selectedID){
     
    // Plot using Plotly
    Plotly.newPlot('bubble', [trace1], layout1);
+
+   // BONUS: GAUGE CHART
+
+ // Gauge Chart to plot weekly washing frequency 
+ const guageDisplay = d3.select("#gauge");
+ guageDisplay.html(""); 
+ const washFreq = idMetadata[0].wfreq;
+ 
+ const guageData = [
+    {
+      domain: { x: [0, 1], y: [0, 1] },
+      value: washFreq,
+      title: { text: "<b>Belly Button Washing Frequency </b><br> (Scrubs Per Week)" },
+      type: "indicator",
+      mode: "gauge+number",     
+       gauge: {
+       axis: { range: [0,9] },
+       bar: { color: "#f2e9e4" },
+       steps: [
+          { range: [0, 1], color: "#e5d5d0" },
+          { range: [1, 2], color: "#dbc7c2" },
+          { range: [2, 3], color: "#d2b9b4" },
+          { range: [3, 4], color: "#c9ada7" },
+          { range: [4, 5], color: "#ac9899" },
+          { range: [5, 6], color: "#8a7e88" },
+          { range: [6, 7], color: "#7d7482" },
+          { range: [7, 8], color: "#706a7b" },
+          { range: [8, 9], color: "#4a4e69" }
+                
+        ],
+       threshold: {
+          value: washFreq
+        }
+      }
+    }
+  ]; 
+  const gaugeLayout = {  width: 600, 
+                   height: 400, 
+                   margin: { t: 0, b: 0 }, 
+                    };
+ 
+ // Plot using Plotly
+  Plotly.newPlot('gauge', guageData, gaugeLayout); 
+ 
+ });
+ }
+ 
+ // Initial test starts at ID 940
+ optionChanged(940);
+ 
+ // Event on change takes the value and calls the function during dropdown selection
+ d3.select("#selDataset").on('change',() => {
+ optionChanged(d3.event.target.value);
+ 
+ });
+
+ // BONUS: GAUGE CHART
+
+ // Gauge Chart to plot weekly washing frequency 
+ const guageDisplay = d3.select("#gauge");
+ guageDisplay.html(""); 
+ const washFreq = idMetadata[0].wfreq;
+ 
+ const guageData = [
+    {
+      domain: { x: [0, 1], y: [0, 1] },
+      value: washFreq,
+      title: { text: "<b>Belly Button Washing Frequency </b><br> (Scrubs Per Week)" },
+      type: "indicator",
+      mode: "gauge+number",     
+       gauge: {
+       axis: { range: [0,9] },
+       bar: { color: "#f2e9e4" },
+       steps: [
+          { range: [0, 1], color: "#e5d5d0" },
+          { range: [1, 2], color: "#dbc7c2" },
+          { range: [2, 3], color: "#d2b9b4" },
+          { range: [3, 4], color: "#c9ada7" },
+          { range: [4, 5], color: "#ac9899" },
+          { range: [5, 6], color: "#8a7e88" },
+          { range: [6, 7], color: "#7d7482" },
+          { range: [7, 8], color: "#706a7b" },
+          { range: [8, 9], color: "#4a4e69" }
+                
+        ],
+       threshold: {
+          value: washFreq
+        }
+      }
+    }
+  ]; 
+  const gaugeLayout = {  width: 600, 
+                   height: 400, 
+                   margin: { t: 0, b: 0 }, 
+                    };
+ 
+ // Plot using Plotly
+  Plotly.newPlot('gauge', guageData, gaugeLayout); 
+ 
+ });
+ }
+ 
+ // Initial test starts at ID 940
+ optionChanged(940);
+ 
+ // Event on change takes the value and calls the function during dropdown selection
+ d3.select("#selDataset").on('change',() => {
+ optionChanged(d3.event.target.value);
+ 
+ });
