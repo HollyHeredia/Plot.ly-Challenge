@@ -83,7 +83,6 @@ function optionChanged(selectedID){
     mode: 'markers',
     marker: {
       color: otuID1,
-      
       size: sampleValue1
     }
   },
