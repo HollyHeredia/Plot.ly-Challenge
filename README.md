@@ -5,11 +5,11 @@ In this challenge, we were tasked to create a web-based dashboard for a scientif
 
 * I used D3 and HTML to read samples.json
 
-* There is a horizontal barchart with a dropdown menu to display the top 10 OTUs found in an individual
+* A horizontal barchart with a dropdown menu to display the top 10 OTUs found in an individual
 
-* There is a bubblechart.
+* A bubblechart.
 
-* There is a guage chart.
+* A guage chart.
 
-* There is a Demographic Info box displaying other relevant info regarding the indivudal selected.
+* A Demographic Info box displaying other relevant info regarding the indivudal selected.
 
