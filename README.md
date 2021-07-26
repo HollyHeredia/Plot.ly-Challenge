@@ -13,3 +13,5 @@ In this challenge, we were tasked to create a web-based dashboard for a scientif
 
 * A Demographic Info box displaying other relevant info regarding the indivudal selected.
 
+Hope you enjoy!
+
